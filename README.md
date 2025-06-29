@@ -37,7 +37,9 @@ if (await ai.knows({ prompt: prompt })) {
 }
 ```
 
-When it comes to building tools, Vercel's `maxSteps` is kinda weird. `maxSteps` forces you into a somewhat esoteric declarative model without recourse. (Can you imagine what kind of loop is being forced to iterate with `maxSteps`?)
+## `maxSteps` is kinda weird
+
+When it comes to building tools, Vercel's `maxSteps` forces you into a somewhat esoteric declarative model without recourse. (Can you imagine what kind of loop is being forced to iterate with `maxSteps`?)
 
 This library aims to alleviate or complement this approach by facilitating an imperative one.
 
@@ -56,9 +58,9 @@ const { text, sources } = await generateText({
 
 Additionally, here are some of the top comments for the [Vercel video](https://youtu.be/ZmPGr1WHS_s?si=wrZ8C8q9QLIO986n) that introduced composing tools with `maxSteps` - most of which expressed some confusion, critique or disapproval of the api.
 
-![comment1](screenshots1.png)
-![comment2](screenshots2.png)
-![comment3](screenshots3.png)
+![comment1](images/screenshots1.png)
+![comment2](images/screenshots2.png)
+![comment3](images/screenshots3.png)
 
 ## What's in the package?
 
@@ -333,7 +335,7 @@ I occasionally inhabit [Twitter](https://x.com/samuel_karani)
 
 ### What I'm building
 
-![Similarly logo](similarly.png)
+![Similarly logo](images/similarly.png)
 
 Find the best alternatives with one click. Discover similar websites, tools and services instantly while browsing. Never miss out on better options again.
 
@@ -356,7 +358,7 @@ The tiers are updated every month, showing the total contributions for every ind
 ### Don't read this:
 
 My comment on the v0 launch video on YouTube was one of the most liked - yikes!
-![Youtube v0](screenshot2.png)
+![Youtube v0](images/screenshot2.png)
 
 Guillermo Rauch, Vercel's CEO responded to my question about Zeit (Vercel) way back in the day over on Twitter
-![Guillermo Rauch](screenshot1.png)
+![Guillermo Rauch](images/screenshot1.png)

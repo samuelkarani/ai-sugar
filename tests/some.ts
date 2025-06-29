@@ -1,5 +1,5 @@
 import { it } from "node:test";
-import { Sugar } from "../ai";
+import { Sugar } from "../index";
 
 export function testSomeSerial(ai: Sugar, verbose?: boolean) {
   const array = ["goat", "fish", "monkey", "cat", "dog", "chicken", "lion"];

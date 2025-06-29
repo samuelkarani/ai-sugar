@@ -1,6 +1,6 @@
 import assert from "node:assert";
 import { it } from "node:test";
-import { Sugar } from "../ai";
+import { Sugar } from "../src/index";
 
 export function testIsTrueValue(ai: Sugar) {
   it("isTrueValue", async () => {

@@ -1,7 +1,7 @@
 import { deepStrictEqual } from "node:assert";
 import { it } from "node:test";
 import { z } from "zod";
-import { Sugar } from "../ai";
+import { Sugar } from "../index";
 
 export function testToSortedGenerate(ai: Sugar, verbose?: boolean) {
   it("toSortedGenerate", async () => {

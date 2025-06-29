@@ -5,7 +5,7 @@ import { openai } from "@ai-sdk/openai";
 import { generateText, tool } from "ai";
 import Exa from "exa-js";
 import z from "zod";
-import { sugar } from "./ai";
+import { sugar } from "../src/index";
 
 const exa = new Exa(process.env.EXA_API_KEY);
 const model = openai("gpt-4o");

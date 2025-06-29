@@ -4,7 +4,7 @@ dotenv.config({ path: ".env.local" });
 import { anthropic } from "@ai-sdk/anthropic";
 import { google } from "@ai-sdk/google";
 import { openai } from "@ai-sdk/openai";
-import { sugar } from "./ai";
+import { sugar } from "./index";
 import {
   testCreateArray,
   testCreateObject,

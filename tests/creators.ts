@@ -1,6 +1,6 @@
 import { it } from "node:test";
 import { z } from "zod";
-import { Sugar } from "../ai";
+import { Sugar } from "../index";
 
 export function testCreateText(ai: Sugar) {
   it("createText", async () => {

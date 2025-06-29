@@ -1,7 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import assert from "node:assert";
 import { it } from "node:test";
-import { Sugar } from "../ai";
+import { Sugar } from "../index";
 
 export function testShortAnswer(ai: Sugar) {
   it("shortAnswer", async () => {
