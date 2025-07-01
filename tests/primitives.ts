@@ -1,7 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import assert from "node:assert";
 import { it } from "node:test";
-import { Sugar } from "../index";
+import { Sugar } from "../src/index";
 
 export function testShortAnswer(ai: Sugar) {
   it("shortAnswer", async () => {
@@ -25,6 +25,10 @@ export function testShortAnswer(ai: Sugar) {
     const question4 = "who is the president of the united states?";
     const result4 = await ai.shortAnswer({ prompt: question4 });
     console.log(question4, result4);
+
+    const question5 = "a word with 9 letters and 5 vowels";
+    const result5 = await ai.shortAnswer({ prompt: question5 });
+    console.log(question5, result5);
   });
 }
 

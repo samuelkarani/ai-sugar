@@ -36,6 +36,12 @@ const merge = (global: Global, local: Local) => ({
 // paraphrase
 // steps
 // conditions
+// plan
+// convert
+// format
+// present
+// synthesize
+// address
 
 export function sugar(options: Global) {
   async function shortAnswer({ prompt, ...rest }: Prompt & Local) {
@@ -70,6 +76,38 @@ export function sugar(options: Global) {
       ...merge(options, rest),
     });
     return object.boolean;
+  }
+
+  async function isProfane({ prompt, ...rest }: { prompt: string } & Local) {
+    const { object } = await generateObject({
+      system: "is this statement profane?",
+      prompt: JSON.stringify({ prompt }),
+      schema: z.object({
+        boolean: z.boolean(),
+      }),
+      ...merge(options, rest),
+    });
+    return object.boolean;
+  }
+
+  async function isProfaneType({
+    prompt,
+    ...rest
+  }: { prompt: string } & Local) {
+    const { object } = await generateObject({
+      system: "return the type of profanity, if any, in the statement",
+      prompt: JSON.stringify({ prompt }),
+      schema: z.object({
+        sexual: z.boolean(),
+        harassment: z.boolean(),
+        hate: z.boolean(),
+        illicit: z.boolean(),
+        selfHarm: z.boolean(),
+        violence: z.boolean(),
+      }),
+      ...merge(options, rest),
+    });
+    return object;
   }
 
   async function knows({ prompt, ...rest }: Prompt & Local) {
@@ -147,13 +185,17 @@ export function sugar(options: Global) {
   async function createArray({
     prompt,
     schema,
+    length,
     ...rest
   }: {
     prompt: string;
     schema: z.ZodSchema;
+    length?: number;
   } & Local) {
     const { object } = await generateObject({
-      system: "create an array using the prompt that matches the schema",
+      system:
+        "create an array using the prompt that matches the schema" +
+        (length ? ` with a length of ${length}` : ""),
       prompt,
       schema,
       output: "array",

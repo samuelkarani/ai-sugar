@@ -4,33 +4,25 @@ dotenv.config({ path: ".env.local" });
 import { anthropic } from "@ai-sdk/anthropic";
 import { google } from "@ai-sdk/google";
 import { openai } from "@ai-sdk/openai";
-import { sugar } from "./index";
-import {
-  testCreateArray,
-  testCreateObject,
-  testCreateText,
-} from "./tests/creators";
+import { sugar } from "../src/index";
+import { testCreateArray, testCreateObject, testCreateText } from "./creators";
 import {
   testEveryConcurrent,
   testEveryGenerate,
   testEverySerial,
-} from "./tests/every";
+} from "./every";
 import {
   testFilterConcurrent,
   testFilterGenerate,
   testFilterSerial,
-} from "./tests/filter";
-import {
-  testFindConcurrent,
-  testFindGenerate,
-  testFindSerial,
-} from "./tests/find";
+} from "./filter";
+import { testFindConcurrent, testFindGenerate, testFindSerial } from "./find";
 import {
   testFindIndexConcurrent,
   testFindIndexGenerate,
   testFindIndexSerial,
-} from "./tests/findIndex";
-import { testIsTrueArray, testIsTrueValue } from "./tests/predicates";
+} from "./findIndex";
+import { testIsTrueArray, testIsTrueValue } from "./predicates";
 import {
   testCan,
   testComplete,
@@ -39,13 +31,9 @@ import {
   testIsTrue,
   testKnows,
   testShortAnswer,
-} from "./tests/primitives";
-import {
-  testSomeConcurrent,
-  testSomeGenerate,
-  testSomeSerial,
-} from "./tests/some";
-import { testToSortedGenerate } from "./tests/sort";
+} from "./primitives";
+import { testSomeConcurrent, testSomeGenerate, testSomeSerial } from "./some";
+import { testToSortedGenerate } from "./sort";
 
 async function test({
   shortAnswer,
@@ -84,6 +72,7 @@ async function test({
   someGenerate,
   some,
   sort,
+  arrays,
   verbose,
   all,
 }: {
@@ -123,6 +112,7 @@ async function test({
   someGenerate?: boolean;
   some?: boolean;
   sort?: boolean;
+  arrays?: boolean;
   verbose?: boolean;
   all?: boolean;
 }) {
@@ -146,27 +136,29 @@ async function test({
   if (isTrueValue || predicates || all) testIsTrueValue(ai);
   if (isTrueArray || predicates || all) testIsTrueArray(ai, verbose);
 
-  if (everySerial || every || all) testEverySerial(ai);
-  if (everyConcurrent || every || all) testEveryConcurrent(ai);
-  if (everyGenerate || every || all) testEveryGenerate(ai);
+  if (everySerial || every || arrays || all) testEverySerial(ai);
+  if (everyConcurrent || every || arrays || all) testEveryConcurrent(ai);
+  if (everyGenerate || every || arrays || all) testEveryGenerate(ai);
 
-  if (filterSerial || filter || all) testFilterSerial(ai, verbose);
-  if (filterConcurrent || filter || all) testFilterConcurrent(ai);
-  if (filterGenerate || filter || all) testFilterGenerate(ai);
+  if (filterSerial || filter || arrays || all) testFilterSerial(ai, verbose);
+  if (filterConcurrent || filter || arrays || all) testFilterConcurrent(ai);
+  if (filterGenerate || filter || arrays || all) testFilterGenerate(ai);
 
-  if (findSerial || find || all) testFindSerial(ai);
-  if (findConcurrent || find || all) testFindConcurrent(ai);
-  if (findGenerate || find || all) testFindGenerate(ai);
+  if (findSerial || find || arrays || all) testFindSerial(ai);
+  if (findConcurrent || find || arrays || all) testFindConcurrent(ai);
+  if (findGenerate || find || arrays || all) testFindGenerate(ai);
 
-  if (findIndexSerial || findIndex || all) testFindIndexSerial(ai);
-  if (findIndexConcurrent || findIndex || all) testFindIndexConcurrent(ai);
-  if (findIndexGenerate || findIndex || all) testFindIndexGenerate(ai);
+  if (findIndexSerial || findIndex || arrays || all) testFindIndexSerial(ai);
+  if (findIndexConcurrent || findIndex || arrays || all)
+    testFindIndexConcurrent(ai);
+  if (findIndexGenerate || findIndex || arrays || all)
+    testFindIndexGenerate(ai);
 
-  if (someSerial || some || all) testSomeSerial(ai);
-  if (someConcurrent || some || all) testSomeConcurrent(ai);
-  if (someGenerate || some || all) testSomeGenerate(ai);
+  if (someSerial || some || arrays || all) testSomeSerial(ai);
+  if (someConcurrent || some || arrays || all) testSomeConcurrent(ai);
+  if (someGenerate || some || arrays || all) testSomeGenerate(ai);
 
-  if (sort || all) testToSortedGenerate(ai, verbose);
+  if (sort || arrays || all) testToSortedGenerate(ai, verbose);
 }
 
 test({
@@ -174,11 +166,6 @@ test({
   primitives: true,
   creators: true,
   predicates: true,
-  every: true,
-  filter: true,
-  find: true,
-  findIndex: true,
-  some: true,
-  sort: true,
+  arrays: true,
   all: true,
 });

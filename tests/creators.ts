@@ -1,6 +1,6 @@
 import { it } from "node:test";
 import { z } from "zod";
-import { Sugar } from "../index";
+import { Sugar } from "../src/index";
 
 export function testCreateText(ai: Sugar) {
   it("createText", async () => {
@@ -57,5 +57,30 @@ export function testCreateArray(ai: Sugar) {
       schema: schema2,
     });
     console.log(prompt2, result2);
+
+    const prompt3 = "Top 10 countries by population";
+    const schema3 = z.object({
+      name: z.string(),
+      population: z.number(),
+      code: z.string(),
+    });
+    const result3 = await ai.createArray({
+      prompt: prompt3,
+      schema: schema3,
+    });
+    console.log(prompt3, result3);
+
+    const prompt4 = "Top AI companies";
+    const schema4 = z.object({
+      name: z.string(),
+      ceo: z.string(),
+      products: z.array(z.string()),
+    });
+    const result4 = await ai.createArray({
+      prompt: prompt4,
+      schema: schema4,
+      length: 3,
+    });
+    console.log(prompt4, result4);
   });
 }

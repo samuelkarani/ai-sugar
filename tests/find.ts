@@ -1,7 +1,7 @@
 import { strictEqual } from "node:assert";
 import { it } from "node:test";
 import { z } from "zod";
-import { Sugar } from "../index";
+import { Sugar } from "../src/index";
 
 export function testFindSerial(ai: Sugar, verbose?: boolean) {
   const array = ["goat", "fish", "monkey", "cat", "dog", "chicken", "lion"];

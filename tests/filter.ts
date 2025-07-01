@@ -1,7 +1,7 @@
 import { deepStrictEqual, strictEqual } from "node:assert";
 import { it } from "node:test";
 import { z } from "zod";
-import { Sugar } from "../index";
+import { Sugar } from "../src/index";
 
 function isEqual(result: string[], required: string[]) {
   for (const item of required) {
