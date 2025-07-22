@@ -1,17 +1,16 @@
 {
   "name": "ai-sugar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of utility functions powered by AI",
   "license": "ISC",
   "author": "Samuel Karani Mbaabu",
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "lint": "tsc",
     "build": "npx tsup src/index.ts --format cjs,esm --dts",
-    "tests": "npx tsx tests/index.tests.ts"
+    "tests": "npx tsx tests/index.ts"
   },
   "dependencies": {
     "ai": "^4.3.16",
