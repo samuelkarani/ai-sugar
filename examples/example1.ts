@@ -58,20 +58,16 @@ async function exaCustom() {
   const ai = sugar({ model });
   // 8.899s
   // { text: 'Last week in San Francisco, two major events took place. Firstly, ...', sources: [] }
-  if (await ai.knows({ prompt: prompt })) {
-    const { text, sources } = await generateText({
+  if (await ai.knows({ knowable: prompt })) {
+    const { text } = await generateText({
       model,
       prompt: prompt,
     });
-    return { text, sources };
+    return text;
   } else {
     const results = await searchExa(prompt);
-    const { text, sources } = await generateText({
-      model,
-      system: prompt + " Use the information provided",
-      prompt: JSON.stringify(results),
-    });
-    return { text, sources };
+    const text = await ai.summarize({ data: results });
+    return text;
   }
 }
 

@@ -7,11 +7,11 @@ export function testSomeSerial(ai: Sugar, verbose?: boolean) {
 
   it("someSerial", async () => {
     const condition1 = "can fly";
-    const result1 = await ai.someSerial({ array, prompt: condition1 });
+    const result1 = await ai.someSerial({ array, condition: condition1 });
     console.log(condition1, result1);
 
     const condition2 = "can swim";
-    const result2 = await ai.someSerial({ array, prompt: condition2 });
+    const result2 = await ai.someSerial({ array, condition: condition2 });
     console.log(condition2, result2);
   });
 }
@@ -22,11 +22,11 @@ export function testSomeConcurrent(ai: Sugar, verbose?: boolean) {
 
   it("someConcurrent", async () => {
     const condition1 = "can fly";
-    const result1 = await ai.someConcurrent({ array, prompt: condition1 });
+    const result1 = await ai.someConcurrent({ array, condition: condition1 });
     console.log(condition1, result1);
 
     const condition2 = "can swim";
-    const result2 = await ai.someConcurrent({ array, prompt: condition2 });
+    const result2 = await ai.someConcurrent({ array, condition: condition2 });
     console.log(condition2, result2);
   });
 }
@@ -37,11 +37,11 @@ export function testSomeGenerate(ai: Sugar, verbose?: boolean) {
 
   it("someGenerate", async () => {
     const condition1 = "can fly";
-    const result1 = await ai.someGenerate({ array, prompt: condition1 });
+    const result1 = await ai.someGenerate({ array, condition: condition1 });
     console.log(condition1, result1);
 
     const condition2 = "can swim";
-    const result2 = await ai.someGenerate({ array, prompt: condition2 });
+    const result2 = await ai.someGenerate({ array, condition: condition2 });
     console.log(condition2, result2);
   });
 }

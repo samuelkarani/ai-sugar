@@ -163,9 +163,9 @@ async function test({
 
 test({
   verbose: true,
-  primitives: true,
-  creators: true,
-  predicates: true,
-  arrays: true,
-  all: true,
+  // primitives: true,
+  // creators: true,
+  // predicates: true,
+  // arrays: true,
+  // all: true,
 });

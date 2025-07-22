@@ -8,11 +8,11 @@ export function testEverySerial(ai: Sugar, verbose?: boolean) {
 
   it("everySerial", async () => {
     const condition1 = "have four legs";
-    const result1 = await ai.everySerial({ array, prompt: condition1 });
+    const result1 = await ai.everySerial({ array, condition: condition1 });
     strictEqual(result1, false);
 
     const condition2 = "all are animals";
-    const result2 = await ai.everySerial({ array, prompt: condition2 });
+    const result2 = await ai.everySerial({ array, condition: condition2 });
     strictEqual(result2, true);
   });
 }
@@ -23,11 +23,11 @@ export function testEveryConcurrent(ai: Sugar, verbose?: boolean) {
 
   it("everyConcurrent", async () => {
     const condition1 = "have four legs";
-    const result1 = await ai.everyConcurrent({ array, prompt: condition1 });
+    const result1 = await ai.everyConcurrent({ array, condition: condition1 });
     strictEqual(result1, false);
 
     const condition2 = "all are animals";
-    const result2 = await ai.everyConcurrent({ array, prompt: condition2 });
+    const result2 = await ai.everyConcurrent({ array, condition: condition2 });
     strictEqual(result2, true);
   });
 }
@@ -38,11 +38,11 @@ export function testEveryGenerate(ai: Sugar, verbose?: boolean) {
 
   it("everyGenerate", async () => {
     const condition1 = "have four legs";
-    const result1 = await ai.everyGenerate({ array, prompt: condition1 });
+    const result1 = await ai.everyGenerate({ array, condition: condition1 });
     strictEqual(result1, false);
 
     const condition2 = "all are animals";
-    const result2 = await ai.everyGenerate({ array, prompt: condition2 });
+    const result2 = await ai.everyGenerate({ array, condition: condition2 });
     strictEqual(result2, true);
   });
 }

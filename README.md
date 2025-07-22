@@ -1,4 +1,7 @@
-Medium article I wrote about [AI Sugar](https://medium.com/@samiezkay/ai-sugar-for-regular-programmers-the-silent-majority-2e709dcd22b4)
+Medium article I wrote for [AI Sugar](https://medium.com/@samiezkay/ai-sugar-for-regular-programmers-the-silent-majority-2e709dcd22b4)
+
+<!-- Thanks to our first sponsor Similarly:
+You can try or fork these examples here: -->
 
 AI Sugar is built for **Typescript/Node.js**
 
@@ -165,9 +168,7 @@ const result2 = await ai.shortAnswer({
 
 <!-- Additionally you can also pass the following arguments: -->
 
-## Tool use ([Vercel example](https://ai-sdk.dev/cookbook/node/web-search-agent#exa))
-
-### Example 1
+## Tool use example ([Vercel example](https://ai-sdk.dev/cookbook/node/web-search-agent#exa))
 
 Setup:
 
@@ -180,7 +181,7 @@ function searchExa() ... // web search api
 Vercel's AI SDK wants you to code like this:
 
 ```
-const { text, sources, toolCalls, toolResults } = await generateText({
+const { text, sources } = await generateText({
   model: model,
   prompt: prompt,
   tools: {
@@ -212,12 +213,8 @@ if (await ai.knows({ prompt: prompt })) {
     prompt: prompt,
   });
 } else {
-  const results = await searchExa(prompt);
-  const { text, sources } = await generateText({
-    model,
-    system: prompt + " Use the information provided",
-    prompt: JSON.stringify(results),
-  });
+    const results = await searchExa(prompt);
+    const text = await ai.summarize({ data: results });
 }
 // 8.899s
 // { text: 'Last week in San Francisco, two major events took place. Firstly, ...', sources: [] }
@@ -247,20 +244,6 @@ const schema = createZod({ foo: "bar", baz: 1 });
 schema.safeParse({ foo: "bar", baz: 1 }).success // true
 ```
 
-### Where you can find me
-
-You can reach me via email at samuel.karani@berkeley.edu
-
-I occasionally inhabit [Twitter](https://x.com/samuel_karani)
-
-### What I'm building
-
-![Similarly logo](images/similarly.png)
-
-Find the best alternatives with one click. Discover similar websites, tools and services instantly while browsing. Never miss out on better options again.
-
-[Check out Similarly](https://chromewebstore.google.com/detail/similarsites+-discover-al/dhahadpjpmphckgebnikgpdhaolcojdg)
-
 ## Become a sponsor - starting 5$
 
 Support us if you would like this work to continue! Sponsorship allows development and maintenance of all 3 sugar libraries: [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar).
@@ -275,6 +258,20 @@ For companies, starting $500 monthly or for a one-time payment.
 As a sponsor you can have your or your organization's name or photo featured in our upcoming sponsors list tiers.
 The list tiers are updated every month to reflect the total contributions for every individual and company.
 
+### Where you can find me
+
+You can reach me via email at samuel.karani@berkeley.edu
+
+I occasionally inhabit [Twitter](https://x.com/samuel_karani)
+
+### What I'm building
+
+![Similarly logo](images/similarly.png)
+
+Find the best alternatives with one click. Discover similar websites, tools and services instantly while browsing. Never miss out on better options again.
+
+[Check out Similarly](https://chromewebstore.google.com/detail/similarsites+-discover-al/dhahadpjpmphckgebnikgpdhaolcojdg)
+
 <!-- ### Don't read this:
 
 My comment on the v0 launch video on YouTube was one of the most liked - yikes!
@@ -282,3 +279,6 @@ My comment on the v0 launch video on YouTube was one of the most liked - yikes!
 
 Guillermo Rauch, Vercel's CEO responded to my question about Zeit (Vercel) way back in the day over on Twitter
 ![Guillermo Rauch](images/screenshot1.png) -->
+
+Inspirations:
+https://www.npmjs.com/package/autolinker

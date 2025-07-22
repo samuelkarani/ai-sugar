@@ -4,19 +4,19 @@ import { Sugar } from "../src/index";
 
 export function testIsTrueValue(ai: Sugar) {
   it("isTrueValue", async () => {
-    const predicate1 = "is a mammal";
+    const condition1 = "is a mammal";
     const value1 = "goat";
     const result1 = await ai.isTrueValue({
       value: value1,
-      prompt: predicate1,
+      condition: condition1,
     });
     assert.equal(result1, true);
 
-    const predicate2 = "is a fish";
+    const condition2 = "is a fish";
     const value2 = "goat";
     const result2 = await ai.isTrueValue({
       value: value2,
-      prompt: predicate2,
+      condition: condition2,
     });
     assert.equal(result2, false);
   });
@@ -30,7 +30,7 @@ export function testIsTrueArray(ai: Sugar, verbose?: boolean) {
     const condition1 = "is not a mammal";
     const result1 = await ai.isTrueArray({
       array,
-      prompt: condition1,
+      condition: condition1,
     });
     const mammals = array.filter((item, index) => !result1[index]);
     const notMammals = array.filter((item, index) => result1[index]);
@@ -40,7 +40,7 @@ export function testIsTrueArray(ai: Sugar, verbose?: boolean) {
     const condition2 = "is a domestic animal";
     const result2 = await ai.isTrueArray({
       array,
-      prompt: condition2,
+      condition: condition2,
     });
     const domesticAnimals = array.filter((item, index) => result2[index]);
     const notDomesticAnimals = array.filter((item, index) => !result2[index]);
@@ -50,7 +50,7 @@ export function testIsTrueArray(ai: Sugar, verbose?: boolean) {
     const condition3 = "is a wild animal";
     const result3 = await ai.isTrueArray({
       array,
-      prompt: condition3,
+      condition: condition3,
     });
     const wildAnimals = array.filter((item, index) => result3[index]);
     const notWildAnimals = array.filter((item, index) => !result3[index]);
@@ -63,7 +63,7 @@ export function testIsTrueArray(ai: Sugar, verbose?: boolean) {
     const condition4 = "is a rainbow color";
     const result4 = await ai.isTrueArray({
       array: colors,
-      prompt: condition4,
+      condition: condition4,
     });
     const rainbowColors = colors.filter((item, index) => result4[index]);
     const notRainbowColors = colors.filter((item, index) => !result4[index]);

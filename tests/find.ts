@@ -11,14 +11,14 @@ export function testFindSerial(ai: Sugar, verbose?: boolean) {
     const condition1 = "lives in water";
     const result1 = await ai.findSerial({
       array,
-      prompt: condition1,
+      condition: condition1,
     });
     strictEqual(result1, "fish");
 
     const condition2 = "meows and purrs";
     const result2 = await ai.findSerial({
       array,
-      prompt: condition2,
+      condition: condition2,
     });
     strictEqual(result2, "cat");
   });
@@ -32,14 +32,14 @@ export function testFindConcurrent(ai: Sugar, verbose?: boolean) {
     const condition1 = "lives in water";
     const result1 = await ai.findConcurrent({
       array,
-      prompt: condition1,
+      condition: condition1,
     });
     strictEqual(result1, "fish");
 
     const condition2 = "meows and purrs";
     const result2 = await ai.findConcurrent({
       array,
-      prompt: condition2,
+      condition: condition2,
     });
     strictEqual(result2, "cat");
   });
@@ -55,7 +55,7 @@ export function testFindGenerate(ai: Sugar, verbose?: boolean) {
     const condition1 = "lives in water";
     const result1 = await ai.findGenerate({
       array,
-      prompt: condition1,
+      condition: condition1,
       schema,
     });
     strictEqual(result1, "fish");
@@ -63,7 +63,7 @@ export function testFindGenerate(ai: Sugar, verbose?: boolean) {
     const condition2 = "meows and purrs";
     const result2 = await ai.findGenerate({
       array,
-      prompt: condition2,
+      condition: condition2,
       schema,
     });
     strictEqual(result2, "cat");

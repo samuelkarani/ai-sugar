@@ -27,7 +27,7 @@ async function rawPrompt() {
         }),
         execute: async ({ query }: { query: string }) => {
           console.log("query:", query);
-          // some of the queries from testing
+          // some of the (irrelevant) queries from testing
           // query: current president of the United States 2023
           // query: current president of the United States
           // query: current president of the United States 2023
@@ -47,7 +47,7 @@ async function customPrompt() {
   const ai = sugar({ model });
   //  2.455s
   // { text: 'Donald J. Trump is the current president of the United States...', sources: 8 }
-  if (await ai.knows({ prompt: prompt })) {
+  if (await ai.knows({ knowable: prompt })) {
     const { text, sources } = await generateText({
       model,
       prompt: prompt,
