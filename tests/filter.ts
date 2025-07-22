@@ -101,7 +101,7 @@ export function testFilterGenerate(ai: Sugar, verbose?: boolean) {
     const result3 = await ai.filterGenerate({
       array,
       condition: condition3,
-      schema,
+      // schema,
     });
     console.log(condition3, result3);
     strictEqual(isEqual(result3, ["monkey", "lion"]), true);
@@ -113,7 +113,7 @@ export function testFilterGenerate(ai: Sugar, verbose?: boolean) {
     const result4 = await ai.filterGenerate({
       array: colors,
       condition: condition4,
-      schema,
+      // schema,
     });
     deepStrictEqual(result4, ["red", "green", "blue", "yellow"]);
   });

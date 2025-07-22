@@ -64,7 +64,7 @@ export function testFindGenerate(ai: Sugar, verbose?: boolean) {
     const result2 = await ai.findGenerate({
       array,
       condition: condition2,
-      schema,
+      // schema,
     });
     strictEqual(result2, "cat");
   });

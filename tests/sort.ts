@@ -31,18 +31,18 @@ export function testToSortedGenerate(ai: Sugar, verbose?: boolean) {
     const result3 = await ai.toSortedGenerate({
       array: numbers,
       order: "largest to smallest",
-      schema: z.string(),
+      // schema: z.string(),
     });
     deepStrictEqual(result3, ["55", "forty two", "sixteen", "seven", "0"]);
 
     const result4 = await ai.toSortedGenerate({
       array: numbers,
       order: "smallest to largest",
-      schema: z.string(),
+      // schema: z.string(),
     });
     deepStrictEqual(result4, ["0", "seven", "sixteen", "forty two", "55"]);
 
-    const objects = [
+    const presidentsObjects = [
       {
         name: "obama",
         age: 44,
@@ -60,15 +60,15 @@ export function testToSortedGenerate(ai: Sugar, verbose?: boolean) {
         age: 73,
       },
     ];
-    if (verbose) console.log("objects:", objects);
+    if (verbose) console.log("presidentsObjects:", presidentsObjects);
 
     const result5 = await ai.toSortedGenerate({
-      array: objects,
+      array: presidentsObjects,
       order: "oldest to youngest",
-      schema: z.object({
-        name: z.string(),
-        age: z.number(),
-      }),
+      // schema: z.object({
+      //   name: z.string(),
+      //   age: z.number(),
+      // }),
     });
     deepStrictEqual(result5, [
       { age: 73, name: "biden" },
@@ -78,7 +78,7 @@ export function testToSortedGenerate(ai: Sugar, verbose?: boolean) {
     ]);
 
     const result6 = await ai.toSortedGenerate({
-      array: objects,
+      array: presidentsObjects,
       order: "youngest to oldest",
       schema: z.object({
         name: z.string(),

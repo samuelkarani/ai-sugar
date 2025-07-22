@@ -1,6 +1,7 @@
 import { generateObject, generateText } from "ai";
 import { isDeepStrictEqual } from "util";
 import z from "zod";
+import { createZod } from "zod-sugar";
 import { merge } from "./_options.js";
 import { type Global, type Local } from "./_types.js";
 
@@ -314,12 +315,12 @@ export default function sugar(options: Global) {
   }: {
     array: T[];
     condition: string;
-    schema: z.ZodSchema<T>;
+    schema?: z.ZodSchema<T>;
   } & Local) {
     const { object } = await generateObject({
       system: `filter the "array" to return only the items that match the "condition"`,
       prompt: JSON.stringify({ array, condition }),
-      schema,
+      schema: schema ?? createZod(array[0]),
       output: "array",
       ...merge(options, rest),
     });
@@ -368,13 +369,13 @@ export default function sugar(options: Global) {
   }: {
     array: T[];
     condition: string;
-    schema: z.ZodSchema<T>;
+    schema?: z.ZodSchema<T>;
   } & Local) {
     const { object } = await generateObject({
       system: `return the first item in the "array" that matches the "condition", otherwise return the string "undefined"`,
       prompt: JSON.stringify({ array, condition }),
       schema: z.object({
-        value: schema,
+        value: schema ?? createZod(array[0]),
       }),
       ...merge(options, rest),
     });
@@ -496,12 +497,12 @@ export default function sugar(options: Global) {
   }: {
     array: T[];
     order: string;
-    schema: z.ZodSchema<T>;
+    schema?: z.ZodSchema<T>;
   } & Local) {
     const { object } = await generateObject({
       system: `sort the "array" in the "order" specified`,
       prompt: JSON.stringify({ array, order }),
-      schema,
+      schema: schema ?? createZod(array[0]),
       output: "array",
       ...merge(options, rest),
     });
