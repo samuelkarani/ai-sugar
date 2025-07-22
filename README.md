@@ -280,5 +280,5 @@ My comment on the v0 launch video on YouTube was one of the most liked - yikes!
 Guillermo Rauch, Vercel's CEO responded to my question about Zeit (Vercel) way back in the day over on Twitter
 ![Guillermo Rauch](images/screenshot1.png) -->
 
-Inspirations:
-https://www.npmjs.com/package/autolinker
+<!-- Inspirations:
+https://www.npmjs.com/package/autolinker -->

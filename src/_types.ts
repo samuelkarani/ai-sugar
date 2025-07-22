@@ -1,4 +1,4 @@
-import { generateObject, generateText, LanguageModel } from "ai";
+import { generateObject, generateText, type LanguageModel } from "ai";
 
 export type GenerateTextInput = Parameters<typeof generateText>["0"];
 export type GenerateObjectInput = Parameters<typeof generateObject>["0"];

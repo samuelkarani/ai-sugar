@@ -2,10 +2,12 @@
   "name": "ai-sugar",
   "version": "1.0.0",
   "description": "A set of utility functions powered by AI",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "author": "Samuel Karani Mbaabu",
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "tests": "npx tsx tests/index.tests.ts"
   },
   "dependencies": {
@@ -21,5 +23,26 @@
     "exa-js": "^1.8.17",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
-  }
+  },
+  "keywords": [
+    "ai",
+    "vercel",
+    "sugar",
+    "vercel ai sdk",
+    "lodash ai",
+    "ai functions"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "images"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelkarani/ai-sugar"
+  },
+  "bugs": {
+    "url": "https://github.com/samuelkarani/ai-sugar/issues"
+  },
+  "homepage": "https://github.com/samuelkarani/ai-sugar#readme"
 }

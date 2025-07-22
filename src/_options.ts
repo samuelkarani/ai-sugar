@@ -1,11 +1,11 @@
 import { openai } from "@ai-sdk/openai";
 import { generateObject, generateText } from "ai";
 import {
-  GenerateObjectInput,
-  GenerateTextInput,
-  Global,
-  Local,
-} from "./_types";
+  type GenerateObjectInput,
+  type GenerateTextInput,
+  type Global,
+  type Local,
+} from "./_types.js";
 
 export let _global: Global = {
   model: openai("gpt-4o-mini"),

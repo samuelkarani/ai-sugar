@@ -1,8 +1,8 @@
 import { generateObject, generateText } from "ai";
 import { isDeepStrictEqual } from "util";
 import z from "zod";
-import { merge } from "./_options";
-import { Global, Local } from "./_types";
+import { merge } from "./_options.js";
+import { type Global, type Local } from "./_types.js";
 
 // startRecordingHistory
 // endRecordingHistory
@@ -30,7 +30,7 @@ import { Global, Local } from "./_types";
 // extract
 // capture
 
-export function sugar(options: Global) {
+export default function sugar(options: Global) {
   async function shortAnswer({
     question,
     ...rest
