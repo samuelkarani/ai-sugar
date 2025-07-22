@@ -22,6 +22,8 @@
 
     /* AND if you're building for a library: */
     "declaration": true,
+    // other
+    "noEmit": true,
 
     /* If your code runs in the DOM: */
     "lib": ["es2022", "dom", "dom.iterable"]
