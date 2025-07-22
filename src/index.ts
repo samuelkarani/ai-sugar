@@ -67,13 +67,21 @@ export function sugar(options: Global) {
     return object.boolean;
   }
 
-  async function knows({ knowable, ...rest }: { knowable: string } & Local) {
+  async function knows({
+    knowable,
+    date,
+    ...rest
+  }: { knowable: string; date?: boolean | Date | string } & Local) {
+    if (typeof date === "boolean" && date === true) {
+      date = new Date().toISOString();
+    }
     const { object } = await generateObject({
       system:
-        "is this something that you know? as of the current date provided",
+        "is this something that you know?" +
+        (date ? "as of the date provided" : ""),
       prompt: JSON.stringify({
         something: knowable,
-        date: new Date().toISOString(),
+        date,
       }),
       schema: z.object({
         boolean: z.boolean(),
@@ -83,10 +91,22 @@ export function sugar(options: Global) {
     return object.boolean;
   }
 
-  async function can({ doable, ...rest }: { doable: string } & Local) {
+  async function can({
+    doable,
+    date,
+    ...rest
+  }: { doable: string; date?: boolean | Date | string } & Local) {
+    if (typeof date === "boolean" && date === true) {
+      date = new Date().toISOString();
+    }
     const { object } = await generateObject({
-      system: "is this something that you can do?",
-      prompt: JSON.stringify({ something: doable }),
+      system:
+        "is this something that you can do?" +
+        (date ? "as of the date provided" : ""),
+      prompt: JSON.stringify({
+        prompt: doable,
+        date,
+      }),
       schema: z.object({
         boolean: z.boolean(),
       }),
