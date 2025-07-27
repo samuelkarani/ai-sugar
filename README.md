@@ -1,9 +1,5 @@
-Medium article I wrote for [AI Sugar](https://medium.com/@samiezkay/ai-sugar-for-regular-programmers-the-silent-majority-2e709dcd22b4)
-
-<!-- Thanks to our first sponsor Similarly:
-You can try or fork these examples here: -->
-
-AI Sugar is built for **Typescript/Node.js**
+<!-- Thanks to our first sponsor Similarly: -->
+<!-- You can try or fork these examples here: -->
 
 ## What is AI Sugar?
 
@@ -11,6 +7,8 @@ AI Sugar is a collection of utility functions powered by AI. This initial versio
 Kinda like "lodash for AI" for those old enough to remember it - or Underscore!
 
 What's more, it allows you break out of the declarative model of Vercel's AI SDK into an imperative one particularly when building tools.
+
+AI Sugar is built with Typescript for Node.js
 
 ## Getting started
 
@@ -143,7 +141,7 @@ const result5 = await ai.filterGenerate({
 
 ## Options & Telemetry
 
-Internally a collection of prompts power each function. As a result we collect telemetry data in order to improve the efficacy of our prompts. You can opt out of sharing any data with us by becoming a sponsor at whatever amount you are comfortable with. This will also make using your functions slightly faster (5-10%). Details are in the [Become a sponsor](#become-a-sponsor) section below.
+Internally a collection of prompts power each function. As a result we collect telemetry data in order to improve the efficacy of our prompts. You can opt out of sharing any data with us by becoming a sponsor at whatever amount you are comfortable with. This will also make using your functions slightly faster (5-10%). Details are in the **Become a sponsor** section below.
 
 You can use different models with different functions. In addition to `model` you can pass other parameters supported by the AI SDK like `maxTokens`, `maxRetries`. Any arguments passed to a function override the global options passed to the `sugar` function.
 
@@ -208,7 +206,7 @@ Instead you can code like this:
 
 ```
 if (await ai.knows({ prompt: prompt })) {
-  const { text, sources } = await generateText({
+  const { text } = await generateText({
     model: model,
     prompt: prompt,
   });
@@ -222,9 +220,7 @@ if (await ai.knows({ prompt: prompt })) {
 
 ## Thanks for reading
 
-You can read more in this [medium article](https://medium.com/@samiezkay/ai-sugar-for-regular-programmers-the-silent-majority-2e709dcd22b4) I wrote about AI sugar.
-
-I welcome your input, suggestions, feedback.
+I welcome your input, suggestions, feedback. You can read more in this [medium article](https://medium.com/@samiezkay/ai-sugar-for-regular-programmers-the-silent-majority-2e709dcd22b4) I wrote about AI sugar.
 
 Check out the following related libraries that I also built with this release. Both are used internally in this library.
 
@@ -244,33 +240,38 @@ const schema = createZod({ foo: "bar", baz: 1 });
 schema.safeParse({ foo: "bar", baz: 1 }).success // true
 ```
 
-## Become a sponsor - starting 5$
+## [Become a sponsor - starting 5$](https://coff.ee/samuelkarani)
 
-Support us if you would like this work to continue! Sponsorship allows development and maintenance of all 3 sugar libraries: [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar).
+Support us if you would like this work to continue! You can contribute on either on [Patreon](https://patreon.com/samuelkarani) or [BuyMeACoffee](https://coff.ee/samuelkarani) - once or monthly. Sponsorship allows development and maintenance of all 3 sugar libraries i.e. [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar).
 
-You can support us on either
-[Patreon](patreon.com/samuelkarani) or [BuyMeACoffee](coff.ee/samiezkay) as we wait for approval to be part of Github Sponsors program.
+<!-- Github Sponsors program. -->
 
-You can become a sponsor at whatever amount you are comfortable with.
-For individuals, starting $5 monthly or for a one-time payment.
-For companies, starting $500 monthly or for a one-time payment.
+<!-- You can become a sponsor at whatever amount you are comfortable with.
 
-As a sponsor you can have your or your organization's name or photo featured in our upcoming sponsors list tiers.
-The list tiers are updated every month to reflect the total contributions for every individual and company.
+- For individuals, starting $5 monthly or a one-time payment.
+- For companies, starting $100 monthly or a one-time payment.
+
+As a sponsor you can have yours or your organization's name or photo featured in our upcoming sponsors list tiers.
+The list tiers will be updated every month to reflect the total contributions for every individual and company. -->
+
+<!-- Additionally each person & company gets 144 characters to promote anything they would want. -->
 
 ### Where you can find me
 
 You can reach me via email at samuel.karani@berkeley.edu
 
-I occasionally inhabit [Twitter](https://x.com/samuel_karani)
+I occasionally inhabit Twitter https://x.com/samuel_karani
+
+<!-- I also have an [Instagram](https://www.instagram.com/samiezkay) -->
 
 ### What I'm building
 
-![Similarly logo](images/similarly.png)
+[![Similarly logo](images/similarly.png)](https://chromewebstore.google.com/detail/similarsites+-discover-al/dhahadpjpmphckgebnikgpdhaolcojdg)
 
 Find the best alternatives with one click. Discover similar websites, tools and services instantly while browsing. Never miss out on better options again.
-
 [Check out Similarly](https://chromewebstore.google.com/detail/similarsites+-discover-al/dhahadpjpmphckgebnikgpdhaolcojdg)
+
+<!-- I am also a co-founder at PollGPT and we're currently on the lookout for investors - reach out if you're interested in building the future of research with AI. -->
 
 <!-- ### Don't read this:
 
@@ -282,3 +283,4 @@ Guillermo Rauch, Vercel's CEO responded to my question about Zeit (Vercel) way b
 
 <!-- Inspirations:
 https://www.npmjs.com/package/autolinker -->
+<!-- https://developer.chrome.com/docs/ai/writer-api#api_functions -->

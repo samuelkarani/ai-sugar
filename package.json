@@ -1,6 +1,6 @@
 {
   "name": "ai-sugar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A set of utility functions powered by AI",
   "license": "ISC",
   "author": "Samuel Karani Mbaabu",
@@ -38,8 +38,7 @@
   ],
   "files": [
     "dist",
-    "README.md",
-    "images"
+    "README.md"
   ],
   "repository": {
     "type": "git",
