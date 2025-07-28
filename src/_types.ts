@@ -21,34 +21,39 @@ type Shared = {
   maxRetries?: GenerateTextInput["maxRetries"];
   abortSignal?: GenerateTextInput["abortSignal"];
   //custom
-  // language?: string;
+  responseLanguage?: string;
   context?: string;
-  // streamText?: boolean;
-  // returnEverything?: boolean;
+  autoContext?: boolean; // add function responses to (user) context
+  streamText?: boolean;
+  returnEverything?: boolean;
+};
+
+type User = {
+  id: string;
+  data?: unknown;
+  language?: string;
+  summary?: string;
 };
 
 export type Global = Shared & {
   model: LanguageModel;
-  // globalContext?: unknown;
-  // systemPrompts?: Partial<Record<keyof Sugar, string>>;
-  // randomize?: boolean;
-  // cycle?: boolean;
+  models?: LanguageModel[];
+  globalContext?: unknown;
+  selectModels?: "all" | "random" | "cycle";
+  selectPrompts?: "all" | "random" | "cycle";
   // alternate?: boolean;
-  // retryWithAlternate?: number;
-  // allowRetry?: boolean;
   // sessionId?: string;
   // sessionHistory?: unknown;
 };
 
-// export type Prompt = {
-//   prompt: string;
-//   messages?: GenerateTextInput["messages"];
-// };
-
 export type Local = Shared & {
-  // system?: string;
   model?: LanguageModel;
-  // localContext?: unknown;
+  models?: LanguageModel[];
+  localContext?: unknown;
+  prompt?: string;
+  prompts?: string[];
+  messages?: GenerateTextInput["messages"];
+  match?: Record<string, LanguageModel>;
   // retry?: boolean;
   // vary?: boolean;
 };

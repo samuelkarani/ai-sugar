@@ -18,20 +18,9 @@ import { type Global, type Local } from "./_types.js";
 
 // image => describe => name => while
 
-// reprompt
-// paraphrase
-// steps
-// conditions
-// plan
-// convert
-// format
-// present
-// synthesize
-// address
-// extract
-// capture
-
 export default function sugar(options: Global) {
+  async function register(name: string, fn: Function) {}
+
   async function shortAnswer({
     question,
     ...rest
