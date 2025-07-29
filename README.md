@@ -10,6 +10,8 @@ What's more, it allows you break out of the declarative model of Vercel's AI SDK
 
 AI Sugar is built with Typescript for Node.js
 
+### [🎉 Support the project from $5](https://github.com/sponsors/samuelkarani)
+
 ## Getting started
 
 Make sure you have [Vercel AI SDK](https://ai-sdk.dev/docs/introduction) setup up
@@ -240,11 +242,11 @@ const schema = createZod({ foo: "bar", baz: 1 });
 schema.safeParse({ foo: "bar", baz: 1 }).success // true
 ```
 
-## [Become a sponsor - starting 5$](https://coff.ee/samuelkarani)
+### [🎉 Become a sponsor starting 5$](https://github.com/sponsors/samuelkarani)
 
-Support us if you would like this work to continue! You can contribute on either on [Patreon](https://patreon.com/samuelkarani) or [BuyMeACoffee](https://coff.ee/samuelkarani) - once or monthly. Sponsorship allows development and maintenance of all 3 sugar libraries i.e. [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar).
+Support us if you would like this work to continue! You can contribute on either on [Github Sponsors](https://github.com/sponsors/samuelkarani) or [Patreon](https://patreon.com/samuelkarani) or [BuyMeACoffee](https://coff.ee/samuelkarani) - once or monthly.
 
-<!-- Github Sponsors program. -->
+<!-- Sponsorship allows development and maintenance of all 3 sugar libraries i.e. [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar). -->
 
 <!-- You can become a sponsor at whatever amount you are comfortable with.
 
