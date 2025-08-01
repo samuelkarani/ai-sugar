@@ -10,7 +10,9 @@ What's more, it allows you break out of the declarative model of Vercel's AI SDK
 
 AI Sugar is built with Typescript for Node.js
 
-### [🎉 Support the project from $5](https://github.com/sponsors/samuelkarani)
+<!-- ### [🎉 Become a sponsor]() [🎉 Become a patreon]() [🎉 Buy me a coffee]() -->
+
+<!-- ### [🎉 Support the project from $5](https://github.com/sponsors/samuelkarani) -->
 
 ## Getting started
 
@@ -242,9 +244,9 @@ const schema = createZod({ foo: "bar", baz: 1 });
 schema.safeParse({ foo: "bar", baz: 1 }).success // true
 ```
 
-### [🎉 Become a sponsor starting 5$](https://github.com/sponsors/samuelkarani)
+<!-- ## [🎉 Become a sponsor starting $5](https://github.com/sponsors/samuelkarani) -->
 
-Support us if you would like this work to continue! You can contribute on either on [Github Sponsors](https://github.com/sponsors/samuelkarani) or [Patreon](https://patreon.com/samuelkarani) or [BuyMeACoffee](https://coff.ee/samuelkarani) - once or monthly.
+<!-- Support us if you would like this work to continue! You can contribute on either on [Github Sponsors](https://github.com/sponsors/samuelkarani) or [Patreon](https://patreon.com/samuelkarani) or [BuyMeACoffee](https://coff.ee/samuelkarani) - once or monthly. -->
 
 <!-- Sponsorship allows development and maintenance of all 3 sugar libraries i.e. [ai-sugar](https://github.com/samuelkarani/ai-sugar), [arrays-sugar](https://github.com/samuelkarani/arays-sugar) and [zod-sugar](https://github.com/samuelkarani/zod-sugar). -->
 
@@ -257,12 +259,6 @@ As a sponsor you can have yours or your organization's name or photo featured in
 The list tiers will be updated every month to reflect the total contributions for every individual and company. -->
 
 <!-- Additionally each person & company gets 144 characters to promote anything they would want. -->
-
-### Where you can find me
-
-You can reach me via email at samuel.karani@berkeley.edu
-
-I occasionally inhabit Twitter https://x.com/samuel_karani
 
 <!-- I also have an [Instagram](https://www.instagram.com/samiezkay) -->
 
